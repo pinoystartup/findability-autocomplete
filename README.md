@@ -1,8 +1,10 @@
- ## Findability Autocomplete 
+## Findability Autocomplete 
 
 **A fast findability-focused lexical autocomplete through ensemble of searches.**
 
 <img src="https://github.com/pinoystartup/findability-autocomplete/blob/master/06_diagrams/findability_autocomplete_view.png" width="450" height="422">
+
+[**Live Demo**](http://searchai.us-west-1.elasticbeanstalk.com/)
 
 ### Overview
 
@@ -22,7 +24,7 @@ You can use the stemmed fulltext search as your **ultimate fallback**. It can be
 
 Below are parts of the index we have designed. It is **general enough baseline** and based on our grocery demo data.
 
-We **demonstrating** this using an open data project called [**Open Grocery Database Project**](http://www.grocery.com/open-grocery-database-project/). 130k sample products.
+We **demonstrating** this using an open data project called [**Open Grocery Database Project**](http://www.grocery.com/open-grocery-database-project/). **130k** sample products.
 
 We use Elasticsearch's Query DSL for our **search query designs**. Note our use of **filters** prior to match searches for **speed**.
 
