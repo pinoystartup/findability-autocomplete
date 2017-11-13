@@ -24,7 +24,7 @@ You can use the stemmed fulltext search as your **ultimate fallback**. It can be
 
 Below are parts of the index we have designed. It is **general enough baseline** and based on our grocery demo data.
 
-We are **demonstrating** this using an open data project called [**Open Grocery Database Project**](http://www.grocery.com/open-grocery-database-project/). **130k** sample products.
+We are **demonstrating** this using an open data project called [**Open Grocery Database Project**](http://www.grocery.com/open-grocery-database-project/). **130k** sample records.
 
 We use Elasticsearch's Query DSL for our **search query designs**. Note our use of **filters** prior to match searches for **speed**.
 
@@ -41,7 +41,7 @@ The **API and UI** is a simple Spring Boot, Bootstrap, jQuery application served
 
 ### Examples
 
-Here are **example query & matches** exhibiting **findability**. We are no longer constrained by **rigid prefix**, **exact spelling**.
+Here are **example queries & matches** exhibiting **findability**. We are no longer constrained by **rigid prefix**, **exact spelling**.
 
 1. **munchy** - Munchie Mrshmllw Smore Dsp 144
 1. **petmate bood** - Petmate Booda Bones Steak, Bacon & Chicken Flavors - 9 Ct
