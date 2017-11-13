@@ -2,6 +2,8 @@
 
 **A fast findability-focused lexical autocomplete through ensemble of searches.**
 
+<img src="https://github.com/pinoystartup/findability-autocomplete/blob/master/06_diagrams/findability_autocomplete_view.png" width="450" height="422">
+
 ### Overview
 
 We issue searches in **parallel** to a **single shard** data to meet **latency-sensitivity** of autocomplete.
