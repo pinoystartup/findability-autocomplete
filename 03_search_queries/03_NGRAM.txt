@@ -1,0 +1,23 @@
+#02_NGRAM
+GET grocery/_search
+{
+  "_source": ["id", "grp_id","upc_14", "upc_12", "brand", "alpha_brand", "alpha_name", "name"],
+  "from" : 0, 
+  "size" : 5,
+  "query": {
+    "bool" : {
+      "must": [{
+        "match": {
+          "name.ngram": {
+            "query": "offee latt",
+            "operator": "and"
+          }
+        }  
+      }]
+    }
+  },
+  "sort": [
+    "_score",
+    { "name": {"order": "asc"}}
+  ]
+}

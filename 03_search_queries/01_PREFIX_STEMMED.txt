@@ -1,0 +1,22 @@
+#01_PREFIX_STEMMED
+GET grocery/_search
+{
+  "_source": ["id", "grp_id","upc_14", "upc_12", "brand", "alpha_brand", "alpha_name", "name"],
+  "suggest": {
+    "product_suggest": {
+      "prefix": "munchy sandw",
+      "completion": {
+        "field": "suggest_stemmed",
+        "size": 5,
+        "contexts": {
+          "alpha_brand": ["m"],
+          "alpha_name": ["m"]
+        }
+      }
+    }
+  },
+  "sort": [
+    "_score",
+    { "name": {"order": "asc"}}
+  ]
+}

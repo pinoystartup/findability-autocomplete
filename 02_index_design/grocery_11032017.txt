@@ -1,0 +1,143 @@
+PUT grocery_11032017
+{
+  "mappings": {
+    "_default_": {
+      "dynamic": false
+    },
+    "product": {
+      "_all": {
+        "enabled": false
+      },
+      "properties": {
+        "id": {
+          "type": "keyword",
+          "index": false
+        },
+        "grp_id": {
+          "type": "keyword"
+        },
+        "upc_14": {
+          "type": "keyword"
+        },
+        "upc_12": {
+          "type": "keyword"
+        },
+        "brand": {
+          "type": "keyword"
+        },
+        "alpha_brand": {
+          "type": "keyword"
+        },
+        "alpha_name": {
+          "type": "keyword"
+        },
+        "suggest": {
+          "type": "completion",
+          "analyzer": "whitespace_analyzer",
+          "contexts": [
+            { "name": "alpha_name", "type": "category" },
+            { "name": "alpha_brand", "type": "category" }
+          ]
+        },
+        "suggest_stemmed": {
+          "type": "completion",
+          "analyzer": "english_analyzer",
+          "contexts": [
+            { "name": "alpha_name", "type": "category" },
+            { "name": "alpha_brand", "type": "category" }
+          ]
+        },
+        "name": {
+          "type": "keyword",
+          "fields": {
+            "ngram": {
+              "type": "text",
+              "analyzer": "ngram_analyzer",
+              "search_analyzer": "whitespace_analyzer"
+            },
+            "sound": {
+              "type": "text",
+              "analyzer": "phonetic_analyzer",
+              "search_analyzer": "phonetic_analyzer"
+            },
+            "text": {
+              "type": "text",
+              "analyzer": "english_analyzer",
+              "search_analyzer": "english_analyzer"
+            }
+          }
+        }
+      }
+    }
+  },
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 1,
+    "analysis": {
+      "filter": {
+        "ngram_filter": {
+          "type": "nGram",
+          "min_gram": 2,
+          "max_gram": 20,
+          "token_chars": [
+            "letter",
+            "digit",
+            "puctuation",
+            "symbol"
+          ]
+        },
+        "phonetic_filter": {
+          "type": "phonetic",
+          "name": "soundex"
+        },
+        "english_stemmer": {
+          "type": "stemmer",
+          "name": "english"
+        }
+      },
+      "analyzer": {
+        "whitespace_analyzer": {
+          "type": "custom",
+          "tokenizer": "whitespace",
+          "filter": [
+            "lowercase",
+            "asciifolding"
+          ]
+        },
+        "ngram_analyzer": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "asciifolding",
+            "ngram_filter"
+          ]
+        },
+        "phonetic_analyzer": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "asciifolding",
+            "phonetic_filter"
+          ]
+        },
+        "english_analyzer": {
+          "tokenizer": "standard",
+          "filter": [
+            "standard",
+            "lowercase",
+            "english_stemmer"
+          ]
+        }
+      }
+    }
+  }
+}
+
+POST /_aliases
+{
+  "actions" : [
+    { "add":  { "index": "grocery_11032017", "alias": "grocery" } }
+  ]
+}

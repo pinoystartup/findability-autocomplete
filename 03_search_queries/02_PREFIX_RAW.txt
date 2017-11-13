@@ -1,0 +1,22 @@
+#02_PREFIX_RAW
+GET grocery/_search
+{
+  "_source": ["id", "grp_id","upc_14", "upc_12", "brand", "alpha_brand", "alpha_name", "name"],
+  "suggest": {
+    "product_suggest": {
+      "prefix": "petmate bood",
+      "completion": {
+        "field": "suggest",
+        "size": 5,
+        "contexts": {
+          "alpha_brand": ["p"],
+          "alpha_name": ["p"]
+        }
+      }
+    }
+  },
+  "sort": [
+    "_score",
+    { "name": {"order": "asc"}}
+  ]
+}

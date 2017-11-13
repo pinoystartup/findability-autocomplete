@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Content-Type" content ="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <title>Grocery > Products</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"/>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <!--<link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>-->
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,600,600italic&amp;subset=latin,cyrillic-ext,greek-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'/>
+    <link href="../css/easy-autocomplete.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/easy-autocomplete.themes.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/cover.css" rel="stylesheet"/>
+    <link href="../css/grocery.css?v=11.12.2017.v2" rel="stylesheet" th:href="@{/css/grocery.css?v=11.12.2017.v2}"/>
+</head>
+<body>
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+                <header class="masthead clearfix">
+                    <div class="inner">
+                        <h3 class="masthead-brand">Search AI</h3>
+                        <nav class="nav nav-masthead">
+                            <a class="nav-link active" href="#">Grocery</a>
+                            <a class="nav-link" href="https://github.com/pinoystartup/findability-autocomplete" target="_blank">GitHub</a>
+                            <a class="nav-link" href="mailto:sim.gamboa@gmail.com">Contact</a>
+                        </nav>
+                    </div>
+                </header>
+                <main role="main" class="inner cover">
+                    <h1 class="cover-heading">Findability Autocomplete</h1>
+                    <p class="lead">A fast findability focused lexical autocomplete.</p>
+                    <div id="grocery_product_search"><input id="findability-autocomplete"/></div>
+                </main>
+                <footer class="mastfoot">
+                    <div class="inner">
+                        <p>Searching and discovering, <a href="https://twitter.com/pinoystartup" target="_blank">@pinoystartup</a>.</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+            integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+            integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="../js/jquery.easy-autocomplete.min.js" type="text/javascript" ></script>
+    <script src="../js/grocery.js?v=11.12.2017.v2"></script>
+</body>
+</html>

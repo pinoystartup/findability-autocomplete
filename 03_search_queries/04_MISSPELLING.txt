@@ -1,0 +1,25 @@
+#04_MISSPELLING
+GET grocery/_search
+{
+  "_source": ["id", "grp_id","upc_14", "upc_12", "brand", "alpha_brand", "alpha_name", "name"],
+  "suggest": {
+    "product_suggest": {
+      "prefix": "saly hanzen",
+      "completion": {
+        "field": "suggest",
+        "size": 5,
+        "fuzzy": {
+          "fuzziness" : 2
+        },
+        "contexts": {
+          "alpha_brand": ["s"],
+          "alpha_name": ["s"]
+        }
+      }
+    }
+  },
+  "sort": [
+    "_score",
+    { "name": {"order": "asc"}}
+  ]
+}
