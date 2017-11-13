@@ -49,3 +49,8 @@ Here are **example query & matches** exhibiting **findability**. We are no longe
 1. **le kim ke** - Lee Kum Kee Black Bean Garlic Sauce
 1. **coleos forcecohli** - Paradise Herbs Coleus Forskolii - 60 Vegetarian Capsules
 1. **curcumin c3 1000** - Doctor's Best Best Curcumin C3 Complex 1000mg Tablets - 120 Ct
+
+### Data
+
+<img src="https://github.com/pinoystartup/findability-autocomplete/blob/master/06_diagrams/grocery_data_view.png" width="611" height="418">
+
