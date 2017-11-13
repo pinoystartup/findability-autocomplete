@@ -12,7 +12,7 @@ We issue searches in **parallel** to a **single shard** data to meet **latency-s
 
 We utilize **Elasticsearch**, its caching, and its near-real time updates.
 
-We use Elasticsearch's **Completion Suggester** for prefix searches. It's based on the state-of-art **Finite State Transducer**.
+We use Elasticsearch's **Completion Suggester** for prefix searches. It is based on the state-of-art **Finite State Transducer**.
 
 Given above configurations, search results are in less than 10ms and most of the times actually just **few milliseconds**.
 
